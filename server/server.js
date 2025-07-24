@@ -1,10 +1,15 @@
 import connectToDB from './src/config/connectDB.js';
 import http from 'http';
+import express from 'express'
+import cors from 'cors';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 const hostname = '127.0.0.1'; // localhost
 const port = 8080;
+
+const app = express();
 
 //conect to our database
 connectToDB();
