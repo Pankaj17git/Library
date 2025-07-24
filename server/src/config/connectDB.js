@@ -6,12 +6,11 @@ const DBUrl = process.env.MONGO_URL;
 
 const connectToDB = async () => {
   try {
-    await mongoose.createConnection(DBUrl);
-    console.log("Mongodb is connected Successfully !");
+    await mongoose.connect(DBUrl);
+    console.log("MongoDB is connected successfully!");
   } catch (error) {
-    console.error("Failed to connect", error);
+    console.error("Failed to connect to MongoDB:", error.message);
     process.exit(1);
-    
   }
 };
 
